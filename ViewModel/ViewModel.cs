@@ -1,38 +1,25 @@
-﻿using System;
-using System.Windows.Threading;
+﻿using System.Windows.Threading;
+using PropertyChanged;
+using System;
 
 namespace Timer_MVVM.ViewModel
 {
-    public class ViewModel : ViewModelBase
+    [AddINotifyPropertyChangedInterface]
+    public class ViewModel
     {
-        private string _currentTime;
-
-        public DispatcherTimer _timer;
-
-        public string CurrentTime
-        {
-            get
-            {
-                return _currentTime;
-            }
-            set
-            {
-                if (_currentTime == value)
-                    return;
-                _currentTime = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Time { get; set; }
 
         public ViewModel()
         {
-            _timer = new DispatcherTimer(DispatcherPriority.Render);
-            _timer.Interval = TimeSpan.FromSeconds(1);
-            _timer.Tick += (sender, args) =>
-            {
-                CurrentTime = DateTime.Now.ToLongTimeString();
-            };
-            _timer.Start();
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Time = DateTime.Now.ToLongTimeString();
         }
     }
 }

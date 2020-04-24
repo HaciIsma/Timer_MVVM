@@ -14,3 +14,4 @@ C:\Users\Haci\source\repos\Timer MVVM\Timer MVVM\obj\Debug\Timer MVVM.csproj.Gen
 C:\Users\Haci\source\repos\Timer MVVM\Timer MVVM\obj\Debug\Timer MVVM.csproj.CoreCompileInputs.cache
 C:\Users\Haci\source\repos\Timer MVVM\Timer MVVM\obj\Debug\Timer MVVM.exe
 C:\Users\Haci\source\repos\Timer MVVM\Timer MVVM\obj\Debug\Timer MVVM.pdb
+C:\Users\Haci\source\repos\Timer MVVM\Timer MVVM\obj\Debug\Timer MVVM.csproj.Fody.CopyLocal.cache
